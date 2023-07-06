@@ -1,0 +1,22 @@
+vrrp_track_process track_apache {
+      process apache2
+      weight 10
+}
+
+vrrp_instance VI_1 {
+      state MASTER
+      interface eth0
+      virtual_router_id 25
+      priority 244
+      advert_int 1
+      authentication {
+         auth_type PASS
+         auth_pass 12345
+      }
+      virtual_ipaddress {
+         <ip_adress>/24
+      }
+      track_process {
+         track_apache
+      }
+}
