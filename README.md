@@ -61,5 +61,5 @@ base:
 Для настройки обратных прокси после настройки конфигурационных файлов запустить команду:
 
 ```bash
-salt-ssh '*' state.apply keepalived
+salt-ssh '<username>-rp0[1-2]' state.apply keepalived
 ```
